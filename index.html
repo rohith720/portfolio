@@ -1,94 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rohith | Digital Marketing Freelancer</title>
-
-<link rel="stylesheet" href="style.css">
+<title>Rohith K Kanchan | Digital Marketing Freelancer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+scroll-behavior:smooth;
+}
+
+/* BACKGROUND */
+
+body{
+background:
+radial-gradient(circle at 20% 30%, #7b2cff40, transparent 25%),
+radial-gradient(circle at 80% 20%, #a855f740, transparent 25%),
+linear-gradient(135deg,#0b0216,#14042b,#0b0216);
+color:white;
+overflow-x:hidden;
+}
+
+/* GRID BACKGROUND */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+background-size:60px 60px;
+z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(10,5,20,0.6);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,0.1);
+z-index:999;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-size:14px;
+opacity:.8;
+}
+
+nav a:hover{
+color:#c084fc;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero img{
+width:140px;
+height:140px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #7b2cff;
+margin-bottom:20px;
+box-shadow:0 0 25px #7b2cff;
+}
+
+.hero h1{
+font-size:48px;
+background:linear-gradient(90deg,#ffffff,#c084fc);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+margin-top:15px;
+max-width:600px;
+opacity:.85;
+}
+
+/* BUTTON */
+
+.btn{
+margin-top:30px;
+padding:14px 35px;
+border-radius:30px;
+background:linear-gradient(45deg,#7b2cff,#a855f7);
+color:white;
+font-weight:600;
+text-decoration:none;
+box-shadow:0 0 15px rgba(123,44,255,.7);
+}
+
+/* SECTIONS */
+
+section{
+padding:100px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+font-size:30px;
+margin-bottom:50px;
+}
+
+/* GLASS CARD */
+
+.glass{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:18px;
+backdrop-filter:blur(20px);
+padding:25px;
+transition:.3s;
+}
+
+.glass:hover{
+box-shadow:0 0 30px rgba(123,44,255,.6);
+transform:translateY(-5px);
+}
+
+/* SKILLS */
+
+.skills{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.skill{
+text-align:center;
+padding:18px;
+}
+
+/* POSTER GRID */
+
+.poster-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.poster-grid img{
+width:100%;
+border-radius:12px;
+transition:.3s;
+}
+
+.poster-grid img:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #a855f7;
+}
+
+/* WEBSITE PROJECTS */
+
+.website-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.website-card{
+text-align:center;
+text-decoration:none;
+color:white;
+padding:25px;
+border-radius:15px;
+background:rgba(255,255,255,0.05);
+}
+
+.website-card:hover{
+box-shadow:0 0 25px rgba(168,85,247,0.8);
+transform:translateY(-5px);
+}
+
+.website-card img{
+width:70px;
+margin-bottom:10px;
+}
+
+/* PHONE MOCKUP */
+
+.phone{
+width:220px;
+height:420px;
+border-radius:30px;
+padding:10px;
+background:black;
+border:4px solid #333;
+box-shadow:0 0 20px rgba(123,44,255,.7);
+overflow:hidden;
+}
+
+.phone img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:20px;
+}
+
+/* SWIPER */
+
+.swiper{
+width:100%;
+}
+
+.swiper-slide{
+display:flex;
+justify-content:center;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+display:block;
+margin-top:10px;
+color:white;
+text-decoration:none;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:16px;
+border-radius:50%;
+font-size:22px;
+color:white;
+}
+
+/* DESKTOP */
+
+@media(min-width:768px){
+
+.skills{
+grid-template-columns:repeat(4,1fr);
+}
+
+.poster-grid{
+grid-template-columns:repeat(4,1fr);
+}
+
+.website-grid{
+grid-template-columns:repeat(4,1fr);
+}
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-<header>
-
-<div class="logo">Rohith</div>
-
 <nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#portfolio">Work</a>
-<a href="#results">Results</a>
+
+<b>ROHITH</b>
+
+<div>
+<a href="#skills">Skills</a>
+<a href="#dashboards">Profiles</a>
+<a href="#posters">Poster Works</a>
+<a href="#websites">Websites</a>
 <a href="#contact">Contact</a>
+</div>
+
 </nav>
 
-</header>
 
 
 <section class="hero">
 
-<h1>Digital Marketing Freelancer</h1>
+<img src="rohith.jpg">
+
+<h1>Rohith K Kanchan</h1>
 
 <p>
-Helping businesses grow with websites, social media marketing,
-video content and ads.
+I'm a dedicated social media marketing freelancer with 2 years of experience helping small businesses build strong online presences. I specialize in strategies that drive growth, boost engagement, and establish brand identity.
 </p>
 
-<a href="#portfolio" class="btn">View My Work</a>
-
-</section>
-
-
-<section id="about">
-
-<h2>About Me</h2>
-
-<p>
-I help businesses grow online through high-quality content,
-social media marketing, SEO and modern websites.
-My focus is delivering measurable growth for brands.
-</p>
+<a class="btn" href="#contact">Let's Work Together</a>
 
 </section>
 
 
 
-<section id="services">
+<section id="skills">
 
-<h2>Services</h2>
+<h2 class="section-title">Core Skills</h2>
 
-<div class="service-grid">
+<div class="skills">
 
-<div class="card">
-<h3>Website Design</h3>
-<p>Modern responsive business websites.</p>
-</div>
-
-<div class="card">
-<h3>Social Media Marketing</h3>
-<p>Content strategy, posts and growth.</p>
-</div>
-
-<div class="card">
-<h3>Meta Ads</h3>
-<p>Facebook & Instagram ad campaigns.</p>
-</div>
-
-<div class="card">
-<h3>SEO</h3>
-<p>Google ranking & local SEO optimization.</p>
-</div>
-
-<div class="card">
-<h3>Video Editing</h3>
-<p>Reels, shorts and promotional videos.</p>
-</div>
+<div class="skill glass">Website Development</div>
+<div class="skill glass">Social Media Marketing</div>
+<div class="skill glass">Meta Ads</div>
+<div class="skill glass">SEO & Google Business</div>
+<div class="skill glass">Video Editing</div>
+<div class="skill glass">Poster Design</div>
+<div class="skill glass">Business Automation</div>
+<div class="skill glass">Content Strategy</div>
 
 </div>
 
@@ -96,31 +346,78 @@ My focus is delivering measurable growth for brands.
 
 
 
-<section id="portfolio">
+<section id="dashboards">
 
-<h2>My Work</h2>
+<h2 class="section-title">Managed Social Profiles</h2>
 
-<div class="portfolio-grid">
+<h3 style="text-align:center;margin-bottom:20px;">Concept Cars</h3>
 
-<div class="work">
-<img src="images/work1.jpg">
-<div class="overlay">Instagram Growth</div>
+<div class="swiper conceptSwiper">
+
+<div class="swiper-wrapper">
+
+<div class="swiper-slide">
+<div class="phone">
+<img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8">
+</div>
 </div>
 
-<div class="work">
-<img src="images/work2.jpg">
-<div class="overlay">Website Design</div>
+<div class="swiper-slide">
+<div class="phone">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+</div>
 </div>
 
-<div class="work">
-<img src="images/work3.jpg">
-<div class="overlay">Reels Editing</div>
 </div>
 
-<div class="work">
-<img src="images/work4.jpg">
-<div class="overlay">Poster Design</div>
 </div>
+
+<p style="text-align:center;margin-top:10px;">⬅ Swipe to explore</p>
+
+
+
+<br><br>
+
+
+
+<h3 style="text-align:center;margin-bottom:20px;">TRORO</h3>
+
+<div class="swiper troroSwiper">
+
+<div class="swiper-wrapper">
+
+<div class="swiper-slide">
+<div class="phone">
+<img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023">
+</div>
+</div>
+
+<div class="swiper-slide">
+<div class="phone">
+<img src="https://images.unsplash.com/photo-1549921296-3c0b5a6a2e0a">
+</div>
+</div>
+
+</div>
+
+</div>
+
+<p style="text-align:center;margin-top:10px;">⬅ Swipe to explore</p>
+
+</section>
+
+
+
+<section id="posters">
+
+<h2 class="section-title">Poster Design Portfolio</h2>
+
+<div class="poster-grid">
+
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d">
+<img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+<img src="https://images.unsplash.com/photo-1557838923-2985c318be48">
 
 </div>
 
@@ -128,26 +425,31 @@ My focus is delivering measurable growth for brands.
 
 
 
-<section id="results">
+<section id="websites">
 
-<h2>Results</h2>
+<h2 class="section-title">Website Projects</h2>
 
-<div class="results">
+<div class="website-grid">
 
-<div class="result-box">
-<h3>+350%</h3>
-<p>Instagram Reach</p>
-</div>
+<a href="https://suvarnahomestayresort.in/" class="website-card">
+<img src="https://cdn-icons-png.flaticon.com/512/841/841364.png">
+<p>Suvarna Homestay</p>
+</a>
 
-<div class="result-box">
-<h3>5X</h3>
-<p>Ad ROI</p>
-</div>
+<a href="#" class="website-card">
+<img src="https://cdn-icons-png.flaticon.com/512/888/888879.png">
+<p>Automotive Brand</p>
+</a>
 
-<div class="result-box">
-<h3>1K → 12K</h3>
-<p>Follower Growth</p>
-</div>
+<a href="#" class="website-card">
+<img src="https://cdn-icons-png.flaticon.com/512/5977/5977586.png">
+<p>Business Landing Page</p>
+</a>
+
+<a href="#" class="website-card">
+<img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png">
+<p>Marketing Website</p>
+</a>
 
 </div>
 
@@ -157,26 +459,34 @@ My focus is delivering measurable growth for brands.
 
 <section id="contact">
 
-<h2>Contact Me</h2>
+<h2 class="section-title">Let's Collaborate</h2>
 
-<p>Email: yourmail@gmail.com</p>
+<div class="contact">
 
-<p>Phone: +91 XXXXX XXXXX</p>
+<p>Take your social media presence to the next level.</p>
 
-<a class="btn" href="https://wa.me/91XXXXXXXXXX">WhatsApp Me</a>
+<a href="https://wa.me/919980174039">WhatsApp: +91 9980174039</a>
+
+<a href="https://www.instagram.com/_.rohith7/">Instagram: _.rohith7</a>
+
+</div>
 
 </section>
 
 
 
-<footer>
-
-<p>© 2026 Rohith | Freelancer Portfolio</p>
-
-</footer>
+<a class="whatsapp" href="https://wa.me/919980174039">💬</a>
 
 
-<script src="script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+new Swiper(".conceptSwiper",{loop:true});
+new Swiper(".troroSwiper",{loop:true});
+
+</script>
 
 </body>
 </html>
